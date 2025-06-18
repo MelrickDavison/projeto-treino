@@ -1,15 +1,15 @@
 .container{
-background-color: #ffffff;
+  background-color: #ffffff;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 }
 
 .book-container{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin: 15px;
   row-gap: 10px;
   column-gap: 10px;
   justify-content: center;
@@ -32,21 +32,28 @@ background-color: #ffffff;
   transform: scale(1.03);
 }
 
-.title-top{
+.logo{
   text-align: center;
-  color: #2040f5;
+  color: #fdfdfd;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-style: normal;
+}
+
+.header {
+  background-color: #27006e;
+  color: white;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
 }
 
 .bookinfo{
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.book{
-  background-color: #27006e;
-  margin: 10PX;
 }

@@ -13,7 +13,9 @@ export default function Home(){
 
   return(
   <div>
-      <h1 className="title-top">ESTANTE VIRTUAL</h1>
+     <header className="header">
+        <h1 className="logo">📚 Estante Virtual</h1>
+      </header>
       <div className="book-container">
         {livros.map((livro) => {
           const coverUrl = livro.formats["image/jpeg"];
