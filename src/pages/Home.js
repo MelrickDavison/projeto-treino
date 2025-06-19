@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 export default function Home(){
@@ -20,16 +21,17 @@ export default function Home(){
         {livros.map((livro) => {
           const coverUrl = livro.formats["image/jpeg"];
           return (
-            <div  className="book-card">
+            <Link to={`/livro/${livro.id}`} style={{textDecoration: "none", color: 'inherit'}} className="book-card">
                 <div key={livro.id}>
                     <img
                     className="img-book"
                     src={coverUrl}
                     alt={`Capa do livro ${livro.title}`}
                     />
-                    <p className="book-info">{livro.title}</p>
+                    {/* <p className="book-info">{livro.title}</p> */}
+                  <p className="book-info">{livro.title}</p>
                 </div>
-            </div>
+            </Link>
           );
         })}
       </div>
