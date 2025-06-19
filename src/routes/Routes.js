@@ -8,7 +8,7 @@ function RoutesLivros() {
     <Router>
     <Routes>
             <Route element = { <Home />}  path="/" exact />
-            <Route element = { <DetalheLivro /> }  path="/detalheLivro" />
+            <Route element = { <DetalheLivro /> }  path="/livro/:id" />
     </Routes>
     </Router>
   );

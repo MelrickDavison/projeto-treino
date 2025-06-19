@@ -21,8 +21,8 @@ export default function Home(){
         {livros.map((livro) => {
           const coverUrl = livro.formats["image/jpeg"];
           return (
-            <Link to={`/livro/${livro.id}`} style={{textDecoration: "none", color: 'inherit'}} className="book-card">
-                <div key={livro.id}>
+            <Link to={`/livro/${livro.id}`} style={{textDecoration: "none", color: 'inherit'}} className="book-card" key={livro.id}>
+                <div>
                     <img
                     className="img-book"
                     src={coverUrl}
