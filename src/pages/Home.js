@@ -5,12 +5,27 @@ import '../App.css';
 
 export default function Home(){
     const [livros, setLivros] = useState([])
+    const [carregando, setCarregando] = useState(true)
 
   useEffect( () => {
       axios.get('https://gutendex.com/books')
-      .then(res => setLivros(res.data.results))
-      .catch(err => console.error(err));
+      .then(res => {
+        setLivros(res.data.results)
+        setCarregando(false);
+      })
+      .catch(err => {
+        console.error(err)
+        setCarregando(false);
+      });
   }, []);
+
+  if (carregando) {
+    return (
+      <div className="loading-container">
+        <p className="loading-text">Carregando livros...</p>
+      </div>
+    );
+  }
 
   return(
   <div>
