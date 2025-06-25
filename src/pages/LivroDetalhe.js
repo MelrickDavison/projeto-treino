@@ -1,10 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../App.css';
 
 export default function LivroDetalhe() {
-  const { id } = useParams(); // pega o id da URL
+  const { id } = useParams();
   const [livro, setLivro] = useState(null);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     axios.get(`https://gutendex.com/books/${id}`)
@@ -12,10 +15,17 @@ export default function LivroDetalhe() {
       .catch(err => console.error(err));
   }, [id]);
 
-  if (!livro) return <p>Carregando livro...</p>;
+if (!livro) {
+  return (
+    <div className="loading-container">
+      <p className="loading-text">Carregando livro...</p>
+    </div>
+  );
+}
 
   return (
-    <div>
+    <div className='container-detalhes'>
+      <button onClick={() => navigate('/')} className="btn-voltar">← Voltar</button>
       <h1>{livro.title}</h1>
       <p>Autor: {livro.authors[0]?.name}</p>
       <p>Idioma(s): {livro.languages.join(', ')}</p>
