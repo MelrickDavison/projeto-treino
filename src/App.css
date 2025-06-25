@@ -64,13 +64,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* altura total da tela */
+  height: 100vh; 
 }
 
 .loading-text {
@@ -81,10 +82,13 @@
 .btn-voltar {
   background: none;
   border: none;
-  color: #007bff;
-  font-size: 18px;
+  color: #fdfdfd;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
   cursor: pointer;
-  margin-bottom: 16px;
+  padding: 10px;
 }
 
 .btn-voltar:hover {
